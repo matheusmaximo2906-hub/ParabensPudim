@@ -5,7 +5,7 @@
   <title>Parabéns, Pudim!!!!!</title>
 
   <style>
-    <body onclick="tocarMusica()"> {
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
@@ -44,9 +44,14 @@
       border: none;
       cursor: pointer;
     }
+
+    iframe {
+      display: none;
+    }
   </style>
 </head>
-<body>
+
+<body onclick="tocarMusica()">
 
 <div class="overlay">
 
@@ -194,7 +199,7 @@ function voltar() {
   window.location.href = "index.html";
 }
 
-  let tocando = false;
+let tocando = false;
 
 function tocarMusica() {
   if (!tocando) {
@@ -205,11 +210,11 @@ function tocarMusica() {
 }
 </script>
 
+<!-- Música -->
 <iframe id="musica"
   src="https://www.youtube.com/embed/TXIBygPZJKM?enablejsapi=1"
-  allow="autoplay"
-  style="display:none;">
+  allow="autoplay">
 </iframe>
-  
+
 </body>
 </html>
