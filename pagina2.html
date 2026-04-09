@@ -5,7 +5,7 @@
   <title>Parabéns, Pudim!!!!!</title>
 
   <style>
-    body {
+    <body onclick="tocarMusica()"> {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
@@ -193,7 +193,23 @@ Parabéns, Pudim 🍮🎂
 function voltar() {
   window.location.href = "index.html";
 }
+
+  let tocando = false;
+
+function tocarMusica() {
+  if (!tocando) {
+    let iframe = document.getElementById("musica");
+    iframe.src += "&autoplay=1";
+    tocando = true;
+  }
+}
 </script>
 
+<iframe id="musica"
+  src="https://www.youtube.com/embed/TXIBygPZJKM?enablejsapi=1"
+  allow="autoplay"
+  style="display:none;">
+</iframe>
+  
 </body>
 </html>
