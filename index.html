@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pudim</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      font-family: Arial, sans-serif;
+    }
+
+    .botao {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 40px;
+      font-size: 20px;
+      background: #111;
+      color: white;
+      border: 2px solid white;
+      cursor: pointer;
+      z-index: 10;
+      transition: 0.3s;
+    }
+
+    .botao:hover {
+      background: white;
+      color: black;
+    }
+
+    .pudim {
+      position: absolute;
+      font-size: 30px;
+      animation: subir linear infinite;
+    }
+
+    @keyframes subir {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+  </style>
+</head>
+<body>
+
+<button class="botao" onclick="ir()">Pudim, Clica Aqui Caraio!</button>
+
+<script>
+  function criarPudim() {
+    const pudim = document.createElement("div");
+    pudim.classList.add("pudim");
+    pudim.innerText = "🍮";
+
+    pudim.style.left = Math.random() * 100 + "vw";
+
+    const duracao = 3 + Math.random() * 5;
+    pudim.style.animationDuration = duracao + "s";
+
+    document.body.appendChild(pudim);
+
+    setTimeout(() => {
+      pudim.remove();
+    }, duracao * 1000);
+  }
+
+  setInterval(criarPudim, 200);
+
+  function ir() {
+    window.location.href = "pagina2.html";
+  }
+</script>
+
+</body>
+</html>
